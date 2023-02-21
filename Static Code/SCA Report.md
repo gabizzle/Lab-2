@@ -106,7 +106,7 @@ CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/blacklists/blacklist_imports.html#b404-import-subprocess
 Location: ./bad/brute.py:3:0
 2
-3        import subprocess
+3         import subprocess
 4         import sys
 ```
 - This result is a warning that the subprocess module is being imported in a file named brute.py. The warning suggests that you should consider the possible security implications associated with using the subprocess module, as it can allow for the execution of arbitrary system commands. The subprocess module is often used to spawn new processes, which can execute system commands. If not used carefully, it can introduce vulnerabilities, such as command injection attacks, which could allow an attacker to execute malicious commands on the system. The warning is just a reminder to ensure that the use of the subprocess module is secure and that the user input is validated before it is passed to the subprocess module.
