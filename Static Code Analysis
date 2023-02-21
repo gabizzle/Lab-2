@@ -1,2 +1,17 @@
 # Lab 2 - Static Code Analysis
+Gabrielle
+CISC 7050 - PenTest
 
+
+
+
+## Results to VULPY
+> ***Test results:***
+> Issue: [B113:request_without_timeout] Requests call without timeout
+> Severity: Medium   Confidence: Low
+> CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+> More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b113_request_without_timeout.html
+> Location: ./bad/api_list.py:10:8
+> 9
+> 10	r = requests.get('http://127.0.1.1:5000/api/post/{}'.format(username))
+> 11	if r.status_code != 200:
