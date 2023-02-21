@@ -1,4 +1,4 @@
-# Lab 2 - Results from VULPY
+# Lab 2 - Results to VULPY
 
 ***Test results:***
 ```
