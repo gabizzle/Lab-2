@@ -15,3 +15,5 @@ CISC 7050 - PenTest
 > 9
 > 10	r = requests.get('http://127.0.1.1:5000/api/post/{}'.format(username))
 > 11	if r.status_code != 200:
+
+
