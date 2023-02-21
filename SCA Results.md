@@ -1,6 +1,4 @@
-# Lab 2 - Static Code Analysis
-
-### Results to VULPY
+# Lab 2 - Results to VULPY
 
 ***Test results:***
 ```
@@ -39,6 +37,7 @@ Location: ./bad/api_post.py:16:12
 17
 ```
 
+***Test results:***
 ```
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
@@ -50,6 +49,7 @@ Location: ./bad/api_post.py:30:8
 31        print(r.text)
 ```
 
+***Test results:***
 ```
 Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
 Severity: Low   Confidence: High
@@ -61,6 +61,7 @@ Location: ./bad/brute.py:3:0
 4       import sys
 ```
 
+***Test results:***
 ```
 Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
 Severity: Low   Confidence: High
@@ -72,6 +73,7 @@ Location: ./bad/brute.py:21:13
 22        if result.returncode == 0:
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -83,6 +85,7 @@ Location: ./bad/db.py:19:18
 20
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -94,6 +97,7 @@ Location: ./bad/db_init.py:20:18
 21
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -105,6 +109,7 @@ Location: ./bad/libapi.py:16:18
 17        print('removing', f)
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -116,6 +121,7 @@ Location: ./bad/libapi.py:20:14
 21
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -127,6 +133,7 @@ Location: ./bad/libapi.py:33:18
 34        return f.name.split('.')[2]
 ```
 
+***Test results:***
 ```
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
@@ -139,6 +146,7 @@ Location: ./bad/libsession.py:21:4
 23
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -150,6 +158,7 @@ Location: ./bad/libuser.py:12:21
 13
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -161,6 +170,7 @@ Location: ./bad/libuser.py:25:14
 26
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -172,6 +182,7 @@ Location: ./bad/libuser.py:53:14
 54       conn.commit()
 ```
 
+***Test results:***
 ```
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
@@ -183,6 +194,7 @@ Location: ./bad/vulpy-ssl.py:13:11
 14
 ```
 
+***Test results:***
 ```
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
@@ -193,6 +205,7 @@ Location: ./bad/vulpy-ssl.py:29:0
 29      app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -203,6 +216,7 @@ Location: ./bad/vulpy-ssl.py:29:51
 29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -213,6 +227,7 @@ Location: ./bad/vulpy-ssl.py:29:69
 29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
@@ -224,6 +239,7 @@ Location: ./bad/vulpy.py:16:11
 17
 ```
 
+***Test results:***
 ```
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
@@ -234,6 +250,7 @@ Location: ./bad/vulpy.py:55:0
 55        app.run(debug=True, host='127.0.1.1', port=5000, extra_files='csp.txt')
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -245,6 +262,7 @@ Location: ./good/cutpasswd.py:3:10
 4       for password in f.readlines():
 ```
 
+***Test results:***
 ```
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
@@ -256,6 +274,7 @@ Location: ./good/httpbrute.py:22:15
 23        if 'HOME' in response.text:
 ```
 
+***Test results:***
 ```
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'MYSUPERSECRETKEY'
 Severity: Low   Confidence: Medium
@@ -267,6 +286,7 @@ Location: ./good/libapi.py:10:9
 11        not_after = 60 # 1 minute
 ```
 
+***Test results:***
 ```
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
@@ -279,6 +299,7 @@ Location: ./good/libsession.py:22:4
 24
 ```
 
+***Test results:***
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
@@ -290,6 +311,7 @@ Location: ./good/libuser.py:61:14
 62        conn.commit()
 ```
 
+***Test results:***
 ```
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
@@ -301,6 +323,7 @@ Location: ./good/vulpy-ssl.py:13:11
 14
 ```
 
+***Test results:***
 ```
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
@@ -311,6 +334,7 @@ Location: ./good/vulpy-ssl.py:29:0
 29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -321,6 +345,7 @@ Location: ./good/vulpy-ssl.py:29:51
 29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -331,6 +356,7 @@ Location: ./good/vulpy-ssl.py:29:69
 29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 
+***Test results:***
 ```
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: '123aa8a93bdde342c871564a62282af857bda14b3359fde95d0c5e4b321610c1'
 Severity: Low   Confidence: Medium
@@ -342,6 +368,7 @@ Location: ./good/vulpy.py:17:11
 18
 ```
 
+***Test results:***
 ```
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
@@ -353,6 +380,7 @@ Location: ./good/vulpy.py:53:0
 54
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -364,6 +392,7 @@ Location: ./utils/ca-create.py:31:10
 32	out.write(pem_private)
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -375,6 +404,7 @@ Location: ./utils/ca-create.py:34:10
 35	out.write(pem_public)
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -386,6 +416,7 @@ Location: ./utils/ca-create.py:58:10
 59        out.write(cert.public_bytes(serialization.Encoding.PEM))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -397,6 +428,7 @@ Location: ./utils/ca-csr-create.py:12:10
 13        private_key = serialization.load_pem_private_key(
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -408,6 +440,7 @@ Location: ./utils/ca-csr-create.py:35:10
 36        out.write(csr.public_bytes(serialization.Encoding.PEM))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -419,6 +452,7 @@ Location: ./utils/ca-csr-load.py:13:10
 14	        ca_cert = x509.load_pem_x509_certificate(ca_cert_file.read(), default_backend())
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -430,6 +464,7 @@ Location: ./utils/ca-csr-load.py:16:10
 17        csr = x509.load_pem_x509_csr(csr_file.read(), default_backend())
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -441,6 +476,7 @@ Location: ./utils/ca-csr-load.py:19:10
 20        private_key = serialization.load_pem_private_key(
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -452,6 +488,7 @@ Location: ./utils/ca-csr-load.py:35:10
 36        out.write(cert.public_bytes(serialization.Encoding.PEM))
 ```
 
+***Test results:***
 ```
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
@@ -463,6 +500,7 @@ Location: ./utils/generate_bad_passwords.py:21:9
 22        r.raise_for_status()
 ```
 
+***Test results:***
 ```
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
@@ -474,6 +512,7 @@ Location: ./utils/httpbrute.py:25:19
 26        logging.info('{} {} {}'.format(username, password, response.status_code))
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -485,6 +524,7 @@ Location: ./utils/rsa-decrypt.py:14:10
 15        private_key = serialization.load_pem_private_key(
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -496,6 +536,7 @@ Location: ./utils/rsa-encrypt.py:14:10
 15        public_key = serialization.load_pem_public_key(
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -507,6 +548,7 @@ Location: ./utils/rsa-keygen.py:26:10
 27        out.write(pem_private)
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -518,6 +560,7 @@ Location: ./utils/rsa-keygen.py:29:10
 30        out.write(pem_public)
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
@@ -529,6 +572,7 @@ Location: ./utils/rsa-sign.py:15:10
 16        private_key = serialization.load_pem_private_key(
 ```
 
+***Test results:***
 ```
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
