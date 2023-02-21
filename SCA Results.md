@@ -1,10 +1,7 @@
 # Lab 2 - Static Code Analysis
-CISC 7050 - PenTest
-
-
-
 
 ### Results to VULPY
+
 ***Test results:*** \
 Issue: [B113:request_without_timeout] \
 Requests call without timeout \
