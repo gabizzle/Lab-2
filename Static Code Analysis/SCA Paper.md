@@ -141,4 +141,8 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 
 
 ## References
-
+[CWE] https://cwe.mitre.org/
+[Bandit] https://bandit.readthedocs.io/en/latest/#:~:text=Bandit%20is%20a%20tool%20designed,files%2C%20it%20generates%20a%20report.
+[Bandit Repo] https://github.com/PyCQA/bandit
+[Vulpy] https://github.com/fportantier/vulpy
+[Let's Be Bad Guys] https://github.com/mpirnat/lets-be-bad-guys
