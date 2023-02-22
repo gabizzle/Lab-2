@@ -23,8 +23,13 @@
 
 ## Methodology
 
-&emsp;&emsp;&emsp; The tool used to find the results of the errors in the applications from the repositories is called **Bandit**. Bandit is described as "a tool designed to find common security issues in Python code." It is an open-source scanner for Python that generates a report of security issues in Python code. It analyzes source codes to find possible vulnerabilities and security issues and reports a level of severity, confidence and its respective CWE based on the error described in the result.
+&emsp;&emsp;&emsp; The tool used to find the results of the errors in the applications from the repositories is called **Bandit**. Bandit is described as "a tool designed to find common security issues in Python code." It is an open-source scanner that generates and analyzes source codes to find possible vulnerabilities and security issues and reports a level of severity, confidence and its respective CWE based on the error described in the result.
 
+Once you have set up python and cloned the repository for bandit, using the syntax below will output these results:
+```
+bandit -r
+```
+<img width="539" alt="Screenshot 2023-02-13 at 3 48 45 PM" src="https://user-images.githubusercontent.com/67624149/220736097-1bb837f6-c7da-46b8-8549-1ac309b84ebc.png">
 
 ## Vulpy Results and Recommendations
 
