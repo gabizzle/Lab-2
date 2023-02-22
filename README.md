@@ -1,4 +1,4 @@
-# Lab-2
+# Lab 2
 #### Deadline: February 27, 2023
 
 **Requirements**
