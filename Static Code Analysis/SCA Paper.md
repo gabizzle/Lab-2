@@ -1,5 +1,8 @@
 # 📝 Report
 
+[Lets Be Bad Guys Results](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Bad%20Guys.md) <br>
+[Vulpy Results](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Vulpy.md)
+
 ## Summary
 
 &emsp;&emsp;&emsp; The report will discuss two GitHub repositories: **_vulpy_** and **_lets-be-bad-guys_**, with applications and codes with errors and vulnerabilities in them. Using the Bandit tool, the task is to observe and analyze the results and what their mistakes entail. The basis of the explanations of the errors will come from the Common Weakness Enumeration (CWE), which they define as "a community-developed list of common software and hardware weakness types that have security ramifications." The CWE describes "weakness" as "a condition in a software, firmware, hardware, or service component that, under certain circumstances, could contribute to the introduction of vulnerabilities. The CWE List and associated classification taxonomy serve as a language that can be used to identify and describe these weaknesses in terms of CWEs." The CWE will help explain some of the syntax that will appear below. 
@@ -16,8 +19,7 @@
 
 &emsp;&emsp;&emsp; Each CWE is accompanied by a "severity" and "confidence" indication which can help determine the priority levels of the impact of the security issue. **Severity** refers to the potential impact of an issue if it were to be exploited. Issues with high severity could lead to significant security breaches, while those with low severity may have minimal impact. **Confidence** refers to the tool's certainty in its detection of an issue. Issues with high confidence are more likely to be genuine security risks, while those with low confidence may be false positives. Having these indications will help developers prioritize which issues to tackle first.
 
-| Severity  | Description | Number of Times it Appeared |
-
+**_Due to the length of the results from both repositories, the results presented in this paper are categorized by each CWE. The rest of the results are linked here: [Lets Be Bad Guys](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Bad%20Guys.md) and here: [Vulpy](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Vulpy.md)._**
 
 ## Vulpy Results
 
