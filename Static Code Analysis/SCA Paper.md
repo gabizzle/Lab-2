@@ -105,7 +105,7 @@ Location: ./bad/db_init.py:20:18
 ```
 **📣 Explanation:** The result indicates an SQL injection vulnerability. Specifically, the result _"B608: hardcoded_sql_expressions"_ suggests that the code is building an SQL query by putting together different pieces of text, including some values provided by the user. However, the code does not take steps to protect itself against attacks where someone maliciously enters special characters or commands that can modify or damage the database. This can allow attackers to access sensitive information, modify data, or even take control of the server. 
 
-**☑️ Possible Solution:** To remediate SQL injection, you should use parameterized queries, also known as prepared statements, in your code. Instead of concatenating input values with the SQL query string, you should use placeholders for the input values and pass them as parameters to the query. This separates the query logic from the input values and prevents attackers from injecting malicious SQL code. It is also important to ensure that input values are properly escaped or validated to prevent unintended behavior of the query. By following these practices, you can protect your application from SQL injection attacks.
+**☑️ Possible Solution:** It is possible to use a method called *parameterized queries* which involved putting input values directly into the SQL query, using placeholders for the input values, and passing them as separate parameters to the query. This way, the input values are separate from the query, and attackers cannot add malicious SQL code.
 
 ## Lets-Be-Bad-Guys Results and Recommendations
 
@@ -122,7 +122,7 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.h
 ```
 **📣 Explanation:** This result here is warning that the code contains a try/except block where the exception is caught but nothing is done with it. The except block has only a pass statement, which means that if an error occurs, it will be silently ignored and the program will continue to execute as if nothing happened. It shows that the code is attempting to delete _p0wned.txt_ and there is an issue with deleting the file, but it will not give feedback to the user that there was an error in deleting the file - that it did not happen. This is considered bad practice because it can hide errors and make debugging difficult. In this case, it is a problem because if the program relies on the file being deleted, it may continue to run with incorrect assumptions about the file system. It could be a security issue if the file being deleted contains sensitive information and the failure to delete the file leaves that information exposed.
 
-**☑️ Solution:** 
+**☑️ Solution:** It is possible to add proper error handling logic in the except block to handle the specific exception that may occur. This will allow you to catch and respond to any exceptions that may occur in the try block and return the proper feedback to the user, and/or remedy the deletion action.
 
 **Example of CWE-78**
 ```
