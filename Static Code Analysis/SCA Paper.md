@@ -92,6 +92,8 @@ Location: ./bad/vulpy-ssl.py:29:0
 
 **☑️ Possible Solution:** It is recommended to disable debug mode when deploying Flask applications to production environments. Flask is a flexible web framework for Python used to build web applications. Therefore, it is important to ensure that debug mode is disabled when deploying Flask applications in production environments.
 
+*Flask is a lightweight and flexible web framework for Python used to build web applications. It is classified as a micro-framework because it does not require particular tools or libraries. Flask allows developers to easily create web applications that can handle HTTP requests, process data, interact with databases, and return responses to users. It is often used for building small to medium-sized web applications, RESTful APIs, and other web services. Flask is highly customizable and modular, which makes it a popular choice among developers who want to build scalable and maintainable web applications quickly.*
+
 **Example of CWE-89**
 ```
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
