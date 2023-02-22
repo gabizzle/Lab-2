@@ -2,6 +2,23 @@
 
 ## Summary
 
+&emsp;&emsp;&emsp; The report will discuss two GitHub repositories: **_vulpy_** and **_lets-be-bad-guys_**, with applications and codes with errors and vulnerabilities in them. Using the Bandit tool, the task is to observe and analyze the results and what their mistakes entail. The basis of the explanations of the errors will come from the Common Weakness Enumeration (CWE), which they define as "a community-developed list of common software and hardware weakness types that have security ramifications." The CWE describes "weakness" as "a condition in a software, firmware, hardware, or service component that, under certain circumstances, could contribute to the introduction of vulnerabilities. The CWE List and associated classification taxonomy serve as a language that can be used to identify and describe these weaknesses in terms of CWEs." The CWE will help explain some of the syntax that will appear below. 
+
+| CWE  | Description | Number of Times it Appeared |
+| ------------- | ------------- | ------------- |
+| 78 | The product constructs all or part of an OS command using externally influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component. | 4 |
+| 89 | The product constructs all or part of an SQL command using externally influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component. | 6 |
+| 94 | The product constructs all or part of a code segment using externally influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment. | 4 |
+| 259 | The product contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components. A hard-coded password typically leads to a significant authentication failure that can be difficult for the system administrator to detect. Once detected, it can be difficult to fix, so the administrator may be forced into disabling the product entirely. There are two main variations: Inbound: the product contains an authentication mechanism that checks for a hard-coded password. Outbound: the product connects to another system or component, and it contains hard-coded password for connecting to that component. | 5 |
+| 377 | Creating and using insecure temporary files can leave application and system data vulnerable to attack. | 24 |
+| 400 | The product does not properly control the allocation and maintenance of a limited resource, thereby enabling an actor to influence the amount of resources consumed, eventually leading to the exhaustion of available resources. | 7 |
+| 703 | The product does not properly anticipate or handle exceptional conditions that rarely occur during normal operation of the product. | 5 |
+
+&emsp;&emsp;&emsp; Each CWE is accompanied by a "severity" and "confidence" indication which can help determine the priority levels of the impact of the security issue. **Severity** refers to the potential impact of an issue if it were to be exploited. Issues with high severity could lead to significant security breaches, while those with low severity may have minimal impact. **Confidence** refers to the tool's certainty in its detection of an issue. Issues with high confidence are more likely to be genuine security risks, while those with low confidence may be false positives. Having these indications will help developers prioritize which issues to tackle first.
+
+| Severity  | Description | Number of Times it Appeared |
+
+
 ## Vulpy Results
 
 **Example of CWE-400**
@@ -59,9 +76,9 @@ Location: ./bad/vulpy-ssl.py:29:0
 28
 29	app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
-**📣 Explanation:** The result here indicates that a Flask application is being run with the debug mode set to True. When debug mode is enabled, it allows the Werkzeug debugger to be accessed and it also allows the execution of arbitrary code. Debug mode is used for development and testing, and not for production purposes. Werkzeug can expose sensitive information, such as server configuration, environment variables, and stack traces. This poses a security risk because attackers can use the debugger to inspect the application's code and potentially exploit vulnerabilities. It is recommended to disable debug mode when deploying Flask applications to production environments. Flask is a flexible web framework for Python used to build web applications. 
+**📣 Explanation:** The result here indicates that a Flask application is being run with the debug mode set to True. When debug mode is enabled, it allows the Werkzeug debugger to be accessed and it also allows the execution of arbitrary code. Debug mode is used for development and testing, and not for production purposes. Werkzeug can expose sensitive information, such as server configuration, environment variables, and stack traces. This poses a security risk because attackers can use the debugger to inspect the application's code and potentially exploit vulnerabilities.
 
-**☑️ Possible Solution:** Therefore, it is important to ensure that debug mode is disabled when deploying Flask applications in production environments.
+**☑️ Possible Solution:** It is recommended to disable debug mode when deploying Flask applications to production environments. Flask is a flexible web framework for Python used to build web applications. Therefore, it is important to ensure that debug mode is disabled when deploying Flask applications in production environments.
 
 **Example of CWE-89**
 ```
@@ -74,9 +91,9 @@ Location: ./bad/db_init.py:20:18
 20 	c.execute("INSERT INTO users (username, password, failures, mfa_enabled, mfa_secret) VALUES ('%s', '%s', '%d', '%d', '%s')" %(u, p, 0, 0, ''))
 21
 ```
-- This result is produced by a static code analyzer called "bandit" and it identifies a security issue in the code related to possible SQL injection vulnerability. Specifically, the result "B608: hardcoded_sql_expressions" suggests that the code is constructing a SQL query by concatenating string literals and input values without using parameterized queries or proper escaping of the input values. This makes it vulnerable to SQL injection attacks, where an attacker can insert malicious input that alters the intended behavior of the query and gain unauthorized access to the database. To fix this issue, the code should use parameterized queries, which separate the query logic from the input values, and ensure that input values are properly escaped.
-- This result means that the code constructs SQL queries using string formatting, which can potentially lead to SQL injection attacks. The code may allow user-controlled data to be concatenated into a SQL query without proper input validation, escaping or parameterization. This can enable an attacker to inject SQL code that gets executed by the database server, possibly leading to unauthorized access, data leaks, or data modification.
-- In the specific example shown, the values for the SQL query are directly inserted using string formatting, which is susceptible to SQL injection attacks if the input data is not properly sanitized.
+**📣 Explanation:** The result indicates an SQL injection vulnerability. Specifically, the result "B608: hardcoded_sql_expressions" suggests that the code is building an SQL query by putting together different pieces of text, including some values provided by the user. However, the code does not take steps to protect itself against attacks where someone maliciously enters special characters or commands that can modify or damage the database. This can allow attackers to access sensitive information, modify data, or even take control of the server. 
+
+**☑️ Possible Solution:** To remediate SQL injection, you should use parameterized queries, also known as prepared statements, in your code. Instead of concatenating input values with the SQL query string, you should use placeholders for the input values and pass them as parameters to the query. This separates the query logic from the input values and prevents attackers from injecting malicious SQL code. It is also important to ensure that input values are properly escaped or validated to prevent unintended behavior of the query. By following these practices, you can protect your application from SQL injection attacks.
 
 ## Lets-Be-Bad-Guys Results
 
@@ -107,10 +124,9 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 72	exec(base64.decodestring(bytes(first_name, 'ascii')))
 73	except TypeError:
 ```
-- This Bandit result is indicating that the code contains the use of the exec() function, which can execute arbitrary code in the context of the current process. This can be a potential security vulnerability, as it allows an attacker to execute arbitrary code on the system. The severity of this issue is considered medium and the confidence of the detection is high. The specific location of this issue is in the file ./badguys/vulnerable/views.py, line 72, where the exec() function is being used to decode a base64 string.
-- The use of exec() in a program is generally considered a security vulnerability because it allows arbitrary code execution.
-- In Python, exec() allows you to execute a string as if it were a Python expression or a statement, which can be dangerous if the string is not properly sanitized or validated before being executed. An attacker can potentially use this to execute arbitrary code and gain control of the system, as they can supply a string that could execute any command on the system.
-- Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
+**📣 Explanation:** The result shows that a code contains the use of the exec() function, which can execute arbitrary code in the context of the current process. This can be a potential security vulnerability, as it allows an attacker to execute arbitrary code on the system. The severity of this issue is considered medium and the confidence of the detection is high. The specific location of this issue is in the file *./badguys/vulnerable/views.py*, line 72, where the *exec()* function is being used to decode a base64 string.
+
+**☑️ Solution:** - Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
 
 ## Methodology
 
