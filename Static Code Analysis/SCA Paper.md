@@ -19,9 +19,14 @@
 
 &emsp;&emsp;&emsp; Each CWE is accompanied by a "severity" and "confidence" indication which can help determine the priority levels of the impact of the security issue. **Severity** refers to the potential impact of an issue if it were to be exploited. Issues with high severity could lead to significant security breaches, while those with low severity may have minimal impact. **Confidence** refers to the tool's certainty in its detection of an issue. Issues with high confidence are more likely to be genuine security risks, while those with low confidence may be false positives. Having these indications will help developers prioritize which issues to tackle first.
 
-**_Due to the length of the results from both repositories, the results presented in this paper are categorized by each CWE. The rest of the results are linked here: [Lets Be Bad Guys](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Bad%20Guys.md) and [Vulpy](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Vulpy.md)._**
+❗ **_Due to the length of the results from both repositories, the results presented in this paper are categorized by each CWE. The rest of the results are linked here: [Lets Be Bad Guys](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Bad%20Guys.md) and [Vulpy](https://github.com/gabizzle/Lab-2/blob/a337124fb944f47ebaa7bda53e837769926d6d59/Static%20Code%20Analysis/SCA%20Results%20-%20Vulpy.md)._** ❗
 
-## Vulpy Results
+## Methodology
+
+&emsp;&emsp;&emsp; The tool used to find the results of the errors in the applications from the repositories is called **Bandit**. Bandit is described as "a tool designed to find common security issues in Python code." It is an open-source scanner for Python that generates a report of security issues in Python code. It analyzes source codes to find possible vulnerabilities and security issues and reports a level of severity, confidence and its respective CWE based on the error described in the result.
+
+
+## Vulpy Results and Recommendations
 
 **Example of CWE-400**
 ```
@@ -97,7 +102,7 @@ Location: ./bad/db_init.py:20:18
 
 **☑️ Possible Solution:** To remediate SQL injection, you should use parameterized queries, also known as prepared statements, in your code. Instead of concatenating input values with the SQL query string, you should use placeholders for the input values and pass them as parameters to the query. This separates the query logic from the input values and prevents attackers from injecting malicious SQL code. It is also important to ensure that input values are properly escaped or validated to prevent unintended behavior of the query. By following these practices, you can protect your application from SQL injection attacks.
 
-## Lets-Be-Bad-Guys Results
+## Lets-Be-Bad-Guys Results and Recommendations
 
 **Example of CWE-703**
 ```
@@ -130,6 +135,5 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 
 **☑️ Solution:** - Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
 
-## Methodology
 
 ## Recommendations
