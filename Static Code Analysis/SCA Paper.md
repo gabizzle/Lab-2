@@ -40,9 +40,9 @@ Severity: Medium   Confidence: Low
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b113_request_without_timeout.html
 Location: ./good/httpbrute.py:22:15
-21	for password in passwords:
-22	response = requests.post(URL, data = {'username': username, 'password': password})
-23	if 'HOME' in response.text:
+21        for password in passwords:
+22        response = requests.post(URL, data = {'username': username, 'password': password})
+23        if 'HOME' in response.text:
 ```
 **📣 Explanation:** The result shows a warning about a possible security issue in some lines of the code where the requests library *requests.post* is used to make an HTTP POST request without a timeout parameter. This means that having no timeout will make the request wait indefinitely. It can cause the program to become unresponsive - to hang or have an unstable connection. Therefore, attackers can use this to launch a Denial of Service (DoS) attack to make it completely unresponsive and unusable.
 
@@ -56,7 +56,7 @@ CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b108_hardcoded_tmp_directory.html
 Location: ./bad/libapi.py:20:14
 19
-20	keyfile = '/tmp/vulpy.apikey.{}.{}'.format(username, key)
+20        keyfile = '/tmp/vulpy.apikey.{}.{}'.format(username, key)
 21
 ```
 **📣 Explanation:** The result is pointing out that an API key is hardcoded in a temporary *'/tmp/'* directory path. This means that the code is relying on the /tmp/ directory to store sensitive information (in this case, an API key) without considering the possible security implications. This is a public directory where any user can write or read files. It becomes possible for an attacker to guess the file name and access sensitive information stored in this directory. 
@@ -70,8 +70,8 @@ Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b105_hardcoded_password_string.html
 Location: ./good/vulpy-ssl.py:13:11
-12	app = Flask('vulpy')
-13	app.config['SECRET_KEY'] = 'aaaaaaa'
+12        app = Flask('vulpy')
+13        app.config['SECRET_KEY'] = 'aaaaaaa'
 14
 ```
 **📣 Explanation:** The result warns that there is a hardcoded password in the code. In this case it is 'aaaaaaa', which also shows poor security practices. Hardcoded passwords are risky, and passwords that don't have a uniqueness to it can be easily cracked. This can lead to unauthorized access where attackers can exploit their access to systems. Hardcoded passwords also involve modifying the source code and rebuilding the application every time it needs to be changed. It is inefficient and can cause more accidentally modifications.
@@ -86,7 +86,7 @@ CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b201_flask_debug_true.html
 Location: ./bad/vulpy-ssl.py:29:0
 28
-29	app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
+29        app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
 ```
 **📣 Explanation:** The result here indicates that a Flask application is being run with the debug mode set to True. When debug mode is enabled, it allows the Werkzeug debugger to be accessed and it also allows the execution of arbitrary code. Debug mode is used for development and testing, and not for production purposes. Werkzeug can expose sensitive information, such as server configuration, environment variables, and stack traces. This poses a security risk because attackers can use the debugger to inspect the application's code and potentially exploit vulnerabilities.
 
@@ -99,11 +99,11 @@ Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
 More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b608_hardcoded_sql_expressions.html
 Location: ./bad/db_init.py:20:18
-19	for u,p in users:
-20 	c.execute("INSERT INTO users (username, password, failures, mfa_enabled, mfa_secret) VALUES ('%s', '%s', '%d', '%d', '%s')" %(u, p, 0, 0, ''))
+19        for u,p in users:
+20        c.execute("INSERT INTO users (username, password, failures, mfa_enabled, mfa_secret) VALUES ('%s', '%s', '%d', '%d', '%s')" %(u, p, 0, 0, ''))
 21
 ```
-**📣 Explanation:** The result indicates an SQL injection vulnerability. Specifically, the result "B608: hardcoded_sql_expressions" suggests that the code is building an SQL query by putting together different pieces of text, including some values provided by the user. However, the code does not take steps to protect itself against attacks where someone maliciously enters special characters or commands that can modify or damage the database. This can allow attackers to access sensitive information, modify data, or even take control of the server. 
+**📣 Explanation:** The result indicates an SQL injection vulnerability. Specifically, the result _"B608: hardcoded_sql_expressions"_ suggests that the code is building an SQL query by putting together different pieces of text, including some values provided by the user. However, the code does not take steps to protect itself against attacks where someone maliciously enters special characters or commands that can modify or damage the database. This can allow attackers to access sensitive information, modify data, or even take control of the server. 
 
 **☑️ Possible Solution:** To remediate SQL injection, you should use parameterized queries, also known as prepared statements, in your code. Instead of concatenating input values with the SQL query string, you should use placeholders for the input values and pass them as parameters to the query. This separates the query logic from the input values and prevents attackers from injecting malicious SQL code. It is also important to ensure that input values are properly escaped or validated to prevent unintended behavior of the query. By following these practices, you can protect your application from SQL injection attacks.
 
@@ -116,14 +116,13 @@ Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
 Location: ./badguys/vulnerable/views.py:65:8
 More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
-64	os.unlink('p0wned.txt')
-65	except:
-66	pass
+64        os.unlink('p0wned.txt')
+65        except:
+66        pass
 ```
-- This result is from a security tool called "Bandit" and it is warning that the code contains a try/except block where the exception is caught but nothing is done with it. This is considered bad practice because it can hide errors and make debugging difficult. In particular, the except block has only a pass statement, which means that if an error occurs, it will be silently ignored and the program will continue to execute as if nothing happened. In this case, the code is attempting to delete a file p0wned.txt, and if an error occurs during the deletion, it will be suppressed by the except block. If there is a problem deleting the file, the program should handle the error in a way that provides feedback to the user and does not continue execution as if everything is okay.
-- The issue with using a try-except block with a pass statement in this context is that it silently ignores any errors that may occur. This can lead to unexpected or undefined behavior, as the error is not being properly handled or reported to the user.
-- In the specific case of the result you provided, the code attempts to delete a file using os.unlink, which may raise an exception if the file does not exist or if there is a permission error. However, the try-except block with a pass statement causes the exception to be ignored, meaning that if an error occurs, the program will not raise an error or otherwise inform the user that the file could not be deleted.
-- This could be potentially problematic if the program relies on the file being deleted, as it may continue to run with incorrect assumptions about the file system. In addition, it could be a security issue if the file being deleted contains sensitive information and the failure to delete the file leaves that information exposed.
+**📣 Explanation:** This result here is warning that the code contains a try/except block where the exception is caught but nothing is done with it. The except block has only a pass statement, which means that if an error occurs, it will be silently ignored and the program will continue to execute as if nothing happened. It shows that the code is attempting to delete _p0wned.txt_ and there is an issue with deleting the file, but it will not give feedback to the user that there was an error in deleting the file - that it did not happen. This is considered bad practice because it can hide errors and make debugging difficult. In this case, it is a problem because if the program relies on the file being deleted, it may continue to run with incorrect assumptions about the file system. It could be a security issue if the file being deleted contains sensitive information and the failure to delete the file leaves that information exposed.
+
+**☑️ Solution:** 
 
 **Example of CWE-78**
 ```
@@ -132,13 +131,14 @@ Severity: Medium   Confidence: High
 CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
 Location: ./badguys/vulnerable/views.py:72:12
 More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
-71	# Try it the Python 3 way...
-72	exec(base64.decodestring(bytes(first_name, 'ascii')))
-73	except TypeError:
+71        # Try it the Python 3 way...
+72        exec(base64.decodestring(bytes(first_name, 'ascii')))
+73        except TypeError:
 ```
 **📣 Explanation:** The result shows that a code contains the use of the exec() function, which can execute arbitrary code in the context of the current process. This can be a potential security vulnerability, as it allows an attacker to execute arbitrary code on the system. The severity of this issue is considered medium and the confidence of the detection is high. The specific location of this issue is in the file *./badguys/vulnerable/views.py*, line 72, where the *exec()* function is being used to decode a base64 string.
 
-**☑️ Solution:** - Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
+**☑️ Solution:** Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
 
 
-## Recommendations
+## References
+
