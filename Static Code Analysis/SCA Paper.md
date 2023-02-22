@@ -105,7 +105,7 @@ Location: ./bad/db_init.py:20:18
 ```
 **📣 Explanation:** The result indicates an SQL injection vulnerability. Specifically, the result _"B608: hardcoded_sql_expressions"_ suggests that the code is building an SQL query by putting together different pieces of text, including some values provided by the user. However, the code does not take steps to protect itself against attacks where someone maliciously enters special characters or commands that can modify or damage the database. This can allow attackers to access sensitive information, modify data, or even take control of the server. 
 
-**☑️ Possible Solution:** It is possible to use a method called *parameterized queries* which involved putting input values directly into the SQL query, using placeholders for the input values, and passing them as separate parameters to the query. This way, the input values are separate from the query, and attackers cannot add malicious SQL code.
+**☑️ Possible Solution:** It is possible to use a method called **parameterized queries** which involved putting input values directly into the SQL query, using placeholders for the input values, and passing them as separate parameters to the query. This way, the input values are separate from the query, and attackers cannot add malicious SQL code.
 
 ## Lets-Be-Bad-Guys Results and Recommendations
 
@@ -135,9 +135,9 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 72        exec(base64.decodestring(bytes(first_name, 'ascii')))
 73        except TypeError:
 ```
-**📣 Explanation:** The result shows that a code contains the use of the exec() function, which can execute arbitrary code in the context of the current process. This can be a potential security vulnerability, as it allows an attacker to execute arbitrary code on the system. The severity of this issue is considered medium and the confidence of the detection is high. The specific location of this issue is in the file *./badguys/vulnerable/views.py*, line 72, where the *exec()* function is being used to decode a base64 string.
+**📣 Explanation:** The result shows that a code contains the use of the _exec()_ function, which can execute arbitrary code in the context of the current process. This can be a potential security vulnerability, as it allows an attacker to execute arbitrary code on the system. The severity of this issue is considered medium and the confidence of the detection is high. The specific location of this issue is in the file *./badguys/vulnerable/views.py*, line 72, where the _exec()_ function is being used to decode a base64 string.
 
-**☑️ Solution:** Using exec() is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using exec() and instead find safer alternatives to achieve the same functionality.
+**☑️ Solution:** Using _exec()_ is also often an indication of poor design, as it can be a sign that a more secure and maintainable design approach is needed. Therefore, it is important to avoid using _exec()_ and instead find safer alternatives to achieve the same functionality.
 
 
 ## References
