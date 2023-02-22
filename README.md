@@ -1,7 +1,7 @@
 # Lab-2
+#### Deadline: February 27, 2023
 
-**SCA Results - Bad Guys**: Results and explanation on the repo lets-be-bad-guys
-
-**SCA Results - Vulpy**: Results and explanation on the repo vulpy
-
-**ACT Recon**: Requirement for Active Information Gathering Recon Automation
+**Requirements**
+- [x] Static Code Analysis https://github.com/gabizzle/Lab-2.git
+- [x] Active Information Gathering
+- [x] Recon Automation
