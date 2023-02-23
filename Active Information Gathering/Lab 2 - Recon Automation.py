@@ -1,4 +1,11 @@
-#
+# The code above is an example of a tool that can search a webpage for email addresses. This code is an example of an OSINT tool that can search a webpage for email addresses using regular expressions.
+# Here's a brief description of what the code is doing:
+# Importing the requests and re modules, which are used to send HTTP requests and search for patterns in text, respectively.
+# Setting the url variable to the website you want to search for email addresses.
+# Sending a GET request to the specified URL using the requests.get() method, which returns a Response object.
+# Searching the HTML content of the Response object for email addresses using the re.findall() method, which uses a regular expression to match email address patterns in the text.
+# Printing out the email addresses found on the page using a for loop and the print() function.
+#This code can be modified to search for other patterns or data types on a webpage, such as phone numbers, addresses, or names, by changing the regular expression used in re.findall(). However, it's worth noting that some websites may have protections in place to prevent web scraping, so it's important to make sure that your use of this code is legal and ethical.
 
 import requests
 import re
