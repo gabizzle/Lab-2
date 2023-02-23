@@ -22,15 +22,15 @@ This code focuses on searching for email addresses on a website.
 ```
 response = requests.get(url)
 ```
-*This part sends a GET request to the URL using the **requests** module and saves the response in the **response** variable.*
+This part sends a GET request to the URL using the **requests** module and saves the response in the **response** variable.
 ```
 emails = re.findall(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", response.text)
 ```
-*The expression here it used to search for email addresses in the HTML text of the response. The expression looks for strings that match the format of an email address (alphanumeric characters, dots, and special characters like "+"). The pattern checks that the email address ends with a valid top-level domain (TLD) like ".com" or ".org". 
+The expression here it used to search for email addresses in the HTML text of the response. The expression looks for strings that match the format of an email address (alphanumeric characters, dots, and special characters like "+"). The pattern checks that the email address ends with a valid top-level domain (TLD) like ".com" or ".org".*
 
-*The **re.findall()** method finds all occurrences of the pattern in the HTML text and returns them as a list of strings, which is saved in the **emails** variable.*
+The **re.findall()** method finds all occurrences of the pattern in the HTML text and returns them as a list of strings, which is saved in the **emails** variable.
 ```
 for email in emails:
     print(f"Email: {email}")
 ```
-*This prints the result (email) that it finds with 'Email: 'in the output.*
+This prints the result (email) that it finds with 'Email: 'in the output.
