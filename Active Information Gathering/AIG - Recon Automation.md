@@ -16,14 +16,20 @@ for email in emails:
     print(f"Email: {email}")
 ```
 
-The code above is an example of a tool that can search a webpage for email addresses. 
-This code is an example of an OSINT tool that can search a webpage for email addresses using regular expressions.
+This code focuses on searching for email addresses on a website.
 
-Here's a brief description of what the code is doing:
+```
+response = requests.get(url)
+```
+*This part sends a GET request to the URL using the **requests** module and saves the response in the **response** variable.*
+```
+emails = re.findall(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", response.text)
+```
+*The expression here it used to search for email addresses in the HTML text of the response. The expression looks for strings that match the format of an email address (alphanumeric characters, dots, and special characters like "+"). The pattern checks that the email address ends with a valid top-level domain (TLD) like ".com" or ".org". 
 
-1.  Importing the requests and re modules, which are used to send HTTP requests and search for patterns in text, respectively.
-2.  Setting the url variable to the website you want to search for email addresses.
-3.  Sending a GET request to the specified URL using the requests.get() method, which returns a Response object.
-4.  Searching the HTML content of the Response object for email addresses using the re.findall() method, which uses a regular expression to match email address patterns in the text.
-5.  Printing out the email addresses found on the page using a for loop and the print() function.
-6.  This code can be modified to search for other patterns or data types on a webpage, such as phone numbers, addresses, or names, by changing the regular expression used in re.findall(). However, it's worth noting that some websites may have protections in place to prevent web scraping, so it's important to make sure that your use of this code is legal and ethical.
+*The **re.findall()** method finds all occurrences of the pattern in the HTML text and returns them as a list of strings, which is saved in the **emails** variable.*
+```
+for email in emails:
+    print(f"Email: {email}")
+```
+*This prints the result (email) that it finds with 'Email: 'in the output.*
