@@ -16,6 +16,7 @@ for email in emails:
     print(f"Email: {email}")
 ```
 
+The code above is an example of a tool that can search a webpage for email addresses. 
 This code is an example of an OSINT tool that can search a webpage for email addresses using regular expressions.
 
 Here's a brief description of what the code is doing:
