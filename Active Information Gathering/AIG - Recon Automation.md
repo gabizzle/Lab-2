@@ -33,4 +33,4 @@ The **_re.findall()_** method finds all occurrences of the pattern in the HTML t
 for email in emails:
     print(f"Email: {email}")
 ```
-This prints the result (email) that it finds with 'Email: 'in the output.
+This prints the result (email) that it finds with **Email:** in the output.
