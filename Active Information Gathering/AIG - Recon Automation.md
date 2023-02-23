@@ -1,4 +1,4 @@
-# Recon Automation 2
+# 🤖 Recon Automation 2
 
 ```
 import requests
@@ -16,6 +16,7 @@ for email in emails:
     print(f"Email: {email}")
 ```
 
+## Explanation
 This code focuses on searching for email addresses on a website.
 
 ```
