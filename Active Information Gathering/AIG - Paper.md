@@ -1,6 +1,8 @@
 # 📝 Active Information Gathering Report
 
 ## Summary
+- Overview of the issues at a C-Level
+- Business impact of the issues
 
 ## Methodology
 
