@@ -46,7 +46,7 @@
 ## 🛡️ Metasploitable 2 Results & Recommendations
 ### NMAP
 **1. nmap -p 1-1000 192.168.56.103**
-    ```
+  ```
     Starting Nmap 7.80 ( https://nmap.org ) at 2023-02-27 12:00 EST
     Nmap scan report for 192.168.56.103
     Host is up (0.00025s latency).
@@ -57,10 +57,10 @@
     111/tcp        open        rpcbind
     139/tcp        open        netbios-ssn
     445/tcp        open        microsoft-ds
-    ```
+  ```
 
 **2. nmap -O 192.168.56.103**
-    ```
+  ```
     Starting Nmap 7.80 ( https://nmap.org ) at 2023-02-27 12:00 EST
     Nmap scan report for 192.168.56.103
     Host is up (0.00032s latency).
@@ -72,16 +72,15 @@
     OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:3
     OS details: Linux 2.6.32 or 3.0 (likely embedded)
     Network Distance: 1 hop
-
     OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
     Nmap done: 1 IP address (1 host up) scanned in 2.04 seconds
-    ```
+  ```
+
 **3. nmap -sV --script vuln 192.168.56.103**
-    ```
+  ```
     Starting Nmap 7.91 ( https://nmap.org ) at 2023-03-01 10:30 EST
     Nmap scan report for 192.168.56.103
     Host is up (0.00044s latency).
-
     PORT         STATE       SERVICE     VERSION
     22/tcp       open        ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
      vuln: 
@@ -119,7 +118,8 @@
          setuid binary file that results in elevated privileges for 
          a non-root user.
     445/tcp  open  netbios-ssn Samba smbd 4.3
-    ```
+  ```
+  
 ### NetCat
 **1. nc -zv 192.168.56.103 1-1000**
 - Indicates only one port is open and listening while the rest refused.
@@ -139,22 +139,21 @@
 ## 🏞️ Windows 7 Results & Recommendations
 ### NMAP
 **1. nmap -p 1-1000 192.168.56.101**
-    ```
+ ```
     Starting Nmap 7.91 ( https://nmap.org ) at 2023-02-28 12:30 EST
     Nmap scan report for 192.168.56.101
     Host is up (0.00049s latency).
-
     PORT        STATE     SERVICE
     22/tcp      open      ssh
     80/tcp      open      http
     139/tcp     open      netbios-ssn
     445/tcp     open      microsoft-ds
     3306/tcp    open      mysql
-
     Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
-    ```
+ ```
+
 **2. nmap -O 192.168.56.101**
-    ```
+ ```
     Starting Nmap 7.91 ( https://nmap.org ) at 2023-02-25 16:38 EST
     Nmap scan report for 192.168.56.101
     Host is up (0.00067s latency).
@@ -162,18 +161,17 @@
     PORT        STATE       SERVICE
     22/tcp      open        ssh
     MAC Address: 08:00:27:5A:1C:4B (Oracle VirtualBox virtual NIC)
-
     Device type: general purpose
     Running: Linux 2.6.X
     OS CPE: cpe:/o:linux:linux_kernel:2.6
     OS details: Linux 2.6.32 - 2.6.39
     Network Distance: 1 hop
-
     OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
     Nmap done: 1 IP address (1 host up) scanned in 0.25 seconds
-    ```
+ ```
+
 **3. nmap -sV --script vuln 192.168.56.101**
-    ```
+ ```
     Starting Nmap 7.91 ( https://nmap.org ) at 2023-02-25 16:46 EST
     Nmap scan report for 192.168.56.101
     Host is up (0.00067s latency).
@@ -195,26 +193,28 @@
            CVE-2018-15473       3.3     (AV:L/AC:L/Au:N/C:N/I:N/A:C)
            CVE-2010-5107        2.6     (AV:N/AC:H/Au:N/C:P/I:N/A:N)
     MAC Address: 08:00:27:5A:1C:4B (Oracle VirtualBox virtual NIC)
-
     Nmap done: 1 IP address (1 host up) scanned in 0.23 seconds
-    ```
+ ```
+    
 ### NetCat
 **1. nc -zv 192.168.56.101 80**
 - Hypertext Transfer Protocol (HTTP)
-    ```
+  ```
     $ nc -zv 192.168.56.101 80
     Connection to 192.168.56.101 80 port [tcp/http] succeeded!
-    ```
+  ```
+
 **2. nc -zv 192.168.56.101 1-1000**
 - A port scan, but indicates those that are listening and those that failed.
-    ```
+  ```
     Connection to 192.168.56.101 22 port [tcp/ssh] succeeded!
     nc: connect to 192.168.56.101 port 445 (tcp) failed: Connection refused
     Connection to 192.168.56.101 631 port [tcp/ipp] succeeded!
     nc: connect to 192.168.56.101 port 902 (tcp) failed: Connection refused
     Connection to 192.168.56.101 3306 port [tcp/mysql] succeeded!
     nc: connect to 192.168.56.101 port 5432 (tcp) failed: Connection refused
-    ```
+  ```
+
 **3. echo "Hello, World!" | nc 192.168.56.101 1234**
 - This send a **_Hello World!_** message to the listening port (1234) at the IP address 
 
@@ -225,4 +225,3 @@
 - This sends a **_file_to_send.txt_** to a remote host on port 1234
 
 ## 🔗 References
- 
