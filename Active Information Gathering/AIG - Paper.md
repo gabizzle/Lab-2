@@ -58,6 +58,7 @@
     139/tcp        open        netbios-ssn
     445/tcp        open        microsoft-ds
     ```
+
 **2. nmap -O 192.168.56.103**
     ```
     Starting Nmap 7.80 ( https://nmap.org ) at 2023-02-27 12:00 EST
