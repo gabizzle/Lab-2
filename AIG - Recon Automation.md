@@ -1,6 +1,6 @@
 # 🤖 Recon Automation 2
 
-```
+```ruby
 import requests
 import re
 
