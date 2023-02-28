@@ -1,7 +1,7 @@
 # Results to VULPY
 
 ***Test results:***
-```
+```ruby
 Issue: [B113:request_without_timeout]
 Requests call without timeout
 Severity: Medium   Confidence: Low
