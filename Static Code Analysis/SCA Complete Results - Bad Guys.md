@@ -2,7 +2,7 @@
 
 
 ***Test results:***
-```
+```ruby
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
@@ -14,7 +14,7 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.h
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B102:exec_used] Use of exec detected.
 Severity: Medium   Confidence: High
 CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
@@ -26,7 +26,7 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B102:exec_used] Use of exec detected.
 Severity: Medium   Confidence: High
 CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
@@ -38,7 +38,7 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
@@ -50,7 +50,7 @@ More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.h
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
