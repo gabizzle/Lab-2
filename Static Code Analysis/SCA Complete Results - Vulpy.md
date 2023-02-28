@@ -14,7 +14,7 @@ Location: ./bad/api_list.py:10:8
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium 
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -26,7 +26,7 @@ Location: ./bad/api_post.py:6:20
 ```
 
 ***Test results:*** 
-```
+```ruby
 Issue: [B113:request_without_timeout] Requests call without timeout 
 Severity: Medium   Confidence: Low 
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html) 
@@ -38,7 +38,7 @@ Location: ./bad/api_post.py:16:12
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
@@ -50,7 +50,7 @@ Location: ./bad/api_post.py:30:8
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
 Severity: Low   Confidence: High
 CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
@@ -62,7 +62,7 @@ Location: ./bad/brute.py:3:0
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
 Severity: Low   Confidence: High
 CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
@@ -74,7 +74,7 @@ Location: ./bad/brute.py:21:13
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -86,7 +86,7 @@ Location: ./bad/db.py:19:18
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -98,7 +98,7 @@ Location: ./bad/db_init.py:20:18
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -110,7 +110,7 @@ Location: ./bad/libapi.py:16:18
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -122,7 +122,7 @@ Location: ./bad/libapi.py:20:14
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -134,7 +134,7 @@ Location: ./bad/libapi.py:33:18
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
@@ -147,7 +147,7 @@ Location: ./bad/libsession.py:21:4
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -159,7 +159,7 @@ Location: ./bad/libuser.py:12:21
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -171,7 +171,7 @@ Location: ./bad/libuser.py:25:14
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -183,7 +183,7 @@ Location: ./bad/libuser.py:53:14
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
@@ -195,7 +195,7 @@ Location: ./bad/vulpy-ssl.py:13:11
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
 CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
@@ -206,7 +206,7 @@ Location: ./bad/vulpy-ssl.py:29:0
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -217,7 +217,7 @@ Location: ./bad/vulpy-ssl.py:29:51
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -228,7 +228,7 @@ Location: ./bad/vulpy-ssl.py:29:69
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
@@ -240,7 +240,7 @@ Location: ./bad/vulpy.py:16:11
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
 CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
@@ -251,7 +251,7 @@ Location: ./bad/vulpy.py:55:0
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -263,7 +263,7 @@ Location: ./good/cutpasswd.py:3:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
@@ -275,7 +275,7 @@ Location: ./good/httpbrute.py:22:15
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'MYSUPERSECRETKEY'
 Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
@@ -287,7 +287,7 @@ Location: ./good/libapi.py:10:9
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B110:try_except_pass] Try, Except, Pass detected.
 Severity: Low   Confidence: High
 CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
@@ -300,7 +300,7 @@ Location: ./good/libsession.py:22:4
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
 Severity: Medium   Confidence: Medium
 CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -312,7 +312,7 @@ Location: ./good/libuser.py:61:14
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'aaaaaaa'
 Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
@@ -324,7 +324,7 @@ Location: ./good/vulpy-ssl.py:13:11
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
 CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
@@ -335,7 +335,7 @@ Location: ./good/vulpy-ssl.py:29:0
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -346,7 +346,7 @@ Location: ./good/vulpy-ssl.py:29:51
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -357,7 +357,7 @@ Location: ./good/vulpy-ssl.py:29:69
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B105:hardcoded_password_string] Possible hardcoded password: '123aa8a93bdde342c871564a62282af857bda14b3359fde95d0c5e4b321610c1'
 Severity: Low   Confidence: Medium
 CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
@@ -369,7 +369,7 @@ Location: ./good/vulpy.py:17:11
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
 Severity: High   Confidence: Medium
 CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
@@ -381,7 +381,7 @@ Location: ./good/vulpy.py:53:0
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -393,7 +393,7 @@ Location: ./utils/ca-create.py:31:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -405,7 +405,7 @@ Location: ./utils/ca-create.py:34:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -417,7 +417,7 @@ Location: ./utils/ca-create.py:58:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -429,7 +429,7 @@ Location: ./utils/ca-csr-create.py:12:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -441,7 +441,7 @@ Location: ./utils/ca-csr-create.py:35:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -453,7 +453,7 @@ Location: ./utils/ca-csr-load.py:13:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -465,7 +465,7 @@ Location: ./utils/ca-csr-load.py:16:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -477,7 +477,7 @@ Location: ./utils/ca-csr-load.py:19:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -489,7 +489,7 @@ Location: ./utils/ca-csr-load.py:35:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
@@ -501,7 +501,7 @@ Location: ./utils/generate_bad_passwords.py:21:9
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B113:request_without_timeout] Requests call without timeout
 Severity: Medium   Confidence: Low
 CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
@@ -513,7 +513,7 @@ Location: ./utils/httpbrute.py:25:19
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -525,7 +525,7 @@ Location: ./utils/rsa-decrypt.py:14:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -537,7 +537,7 @@ Location: ./utils/rsa-encrypt.py:14:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -549,7 +549,7 @@ Location: ./utils/rsa-keygen.py:26:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -561,7 +561,7 @@ Location: ./utils/rsa-keygen.py:29:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
@@ -573,7 +573,7 @@ Location: ./utils/rsa-sign.py:15:10
 ```
 
 ***Test results:***
-```
+```ruby
 Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
 Severity: Medium   Confidence: Medium
 CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
