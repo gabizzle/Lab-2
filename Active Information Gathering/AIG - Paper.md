@@ -1,19 +1,9 @@
 # 📝 Active Information Gathering Report
 
 ## Summary
-   The report will talk about the results taken from running active information gathering using simulated environments. The virtual environments used are Kali, Windows 7 and Metasploitable 2 which are all under one network. To scan the networks for vulnerabilities, the tools used are NetCat and NMAP. Netcat, also known as nc, is a command-line tool used for networking and security purposes. It allows users to create and interact with TCP and UDP connections over the network. Nmap is a popular command-line tool used for network exploration and security auditing. It is designed to scan and map networks, identify open ports and services, and detect potential vulnerabilities.
+&emsp;&emsp;&emsp;The report will talk about the results taken from running active information gathering using simulated environments. The virtual environments used are Kali, Windows 7 and Metasploitable 2 which are all under one network. To scan the networks for vulnerabilities, the tools used are NetCat and NMAP. Netcat, also known as nc, is a command-line tool used for networking and security purposes. It allows users to create and interact with TCP and UDP connections over the network. Nmap is a popular command-line tool used for network exploration and security auditing. It is designed to scan and map networks, identify open ports and services, and detect potential vulnerabilities.
 
-
-
-
-
-
-
-- **Financial Loss**: CVEs can lead to significant financial loss for a business. For example, if an attacker exploits a vulnerability in a network and gains access to sensitive data, the company may have to pay a ransom to retrieve the data or suffer the cost of reputational damage.
-- **Legal Liability**: In some cases, a business may be legally liable for a security breach caused by a CVE. The company may be subject to fines or lawsuits from customers or regulatory bodies for failing to protect their sensitive data.
-- **Operational Disruption**: CVEs can cause significant operational disruption to a business, leading to downtime, loss of productivity, and loss of revenue. For example, if a network is infected with malware, it may require significant resources to restore the network and prevent further damage.
-- **Reputational Damage**: A CVE can damage a company's reputation, particularly if sensitive customer or employee data is compromised. This can result in a loss of trust and confidence among customers, partners, and stakeholders.
-- **Compliance Issues**: Many businesses are subject to regulatory compliance requirements that require them to protect sensitive data. A CVE can result in non-compliance, leading to regulatory fines and penalties.
+&emsp;&emsp;&emsp;Using NetCat and NMAP exposed vulnerabilities and security issues on specific ports. Descriptions are indicated with the results after the scan was conducted. CVE (Common Vulnerabilities and Exposures) is a standardized system for identifying and naming cybersecurity vulnerabilities. Each CVE identifier represents a unique vulnerability or security exposure that has been assigned a specific identifier number. Knowing the CVE helps in easily identifying the issue needed to remediate to avoid certain impacts to organizations and businesses such as their legal liabilities, financial loses, reputation, operation disruptions and compliance issues.
 
 ## Methodology
 
