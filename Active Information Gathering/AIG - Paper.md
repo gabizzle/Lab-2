@@ -1,8 +1,19 @@
 # 📝 Active Information Gathering Report
 
 ## Summary
-- Overview of the issues at a C-Level
-- Business impact of the issues
+   The report will talk about the results taken from running active information gathering using simulated environments. The virtual environments used are Kali, Windows 7 and Metasploitable 2 which are all under one network. To scan the networks for vulnerabilities, the tools used are NetCat and NMAP. Netcat, also known as nc, is a command-line tool used for networking and security purposes. It allows users to create and interact with TCP and UDP connections over the network. Nmap is a popular command-line tool used for network exploration and security auditing. It is designed to scan and map networks, identify open ports and services, and detect potential vulnerabilities.
+
+
+
+
+
+
+
+- **Financial Loss**: CVEs can lead to significant financial loss for a business. For example, if an attacker exploits a vulnerability in a network and gains access to sensitive data, the company may have to pay a ransom to retrieve the data or suffer the cost of reputational damage.
+- **Legal Liability**: In some cases, a business may be legally liable for a security breach caused by a CVE. The company may be subject to fines or lawsuits from customers or regulatory bodies for failing to protect their sensitive data.
+- **Operational Disruption**: CVEs can cause significant operational disruption to a business, leading to downtime, loss of productivity, and loss of revenue. For example, if a network is infected with malware, it may require significant resources to restore the network and prevent further damage.
+- **Reputational Damage**: A CVE can damage a company's reputation, particularly if sensitive customer or employee data is compromised. This can result in a loss of trust and confidence among customers, partners, and stakeholders.
+- **Compliance Issues**: Many businesses are subject to regulatory compliance requirements that require them to protect sensitive data. A CVE can result in non-compliance, leading to regulatory fines and penalties.
 
 ## Methodology
 
@@ -223,5 +234,3 @@
 
 **5. nc 192.168.56.101 1234 < file_to_send.txt**
 - This sends a **_file_to_send.txt_** to a remote host on port 1234
-
-## 🔗 References
